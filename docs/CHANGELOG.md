@@ -1,3 +1,10 @@
+# [0.8.0](https://github.com/alan890104/demo-sdk/compare/v0.7.0...v0.8.0) (2024-08-24)
+
+
+### Features
+
+* Update "types" path in package.json ([e9b5469](https://github.com/alan890104/demo-sdk/commit/e9b54696d81ffd69b247e0d73733134437aaf5aa))
+
 # [0.7.0](https://github.com/alan890104/demo-sdk/compare/v0.6.0...v0.7.0) (2024-08-24)
 
 
