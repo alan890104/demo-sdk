@@ -23,6 +23,10 @@ export class MySDK {
         return this.name;
     }
 
+    getGreeting(): string {
+        return `Hello, ${this.name}!`;
+    }
+
     /**
      * Calculates the sum of two numbers.
      * @param a - The first number.
