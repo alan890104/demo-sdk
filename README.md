@@ -408,8 +408,9 @@ Node version >= 20
 
 2. Link this project in other repo.
 
+    In other repo, run following command.
     ```bash
-    yarn link <the relative path of this project>
+    YARN_IGNORE_PATH=1 yarn link <the relative path of this project>
     ```
 
 
