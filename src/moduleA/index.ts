@@ -19,6 +19,10 @@ export class MySDK {
         return beginCell().storeAddress(addr).storeStringTail("Hello World").endCell()
     }
 
+    getName(): string {
+        return this.name;
+    }
+
     /**
      * Calculates the sum of two numbers.
      * @param a - The first number.
