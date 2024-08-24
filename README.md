@@ -398,7 +398,19 @@ Node version >= 20
 
 3. Run `yarn build` to build the project.
 
-# Publish
+# Local Development
+
+1. Build the project.
+
+    ```bash
+    yarn build
+    ```
+
+2. Link this project in other repo.
+
+    ```bash
+    yarn link <the relative path of this project>
+    ```
 
 
 
