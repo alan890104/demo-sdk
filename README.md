@@ -359,7 +359,7 @@
           - name: Setup yarn version
             run: corepack enable && yarn set version stable
           - name: Install dependencies
-            run: yarn install
+            run: yarn install --frozen-lockfile
           - name: Release
             env:
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
