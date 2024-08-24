@@ -293,22 +293,22 @@ Node version >= 20
 
     ```json
     {
-      "branches": [
-        {
-          "name": "v[0-9]+.[0-9]+.[0-9]+",
-          "prerelease": false
-        }
-      ],
-      "tagFormat": "${version}",
+      "branches": ["main"],
       "plugins": [
         "@semantic-release/commit-analyzer",
         "@semantic-release/release-notes-generator",
-        "@semantic-release/changelog",
+        [
+          "@semantic-release/changelog",
+          {
+            "changelogFile": "docs/CHANGELOG.md"
+          }
+        ],
         "@semantic-release/npm",
         [
           "@semantic-release/git",
           {
-            "message": "chore(release): ${nextRelease.version} [skip ci]"
+            "message": "chore(release): ${nextRelease.version} [skip ci]",
+            "assets": ["docs/CHANGELOG.md"]
           }
         ]
       ]
@@ -342,7 +342,7 @@ Node version >= 20
     on:
       push:
         branches:
-          - main
+          - release
 
     permissions:
       contents: read # for checkout
@@ -351,6 +351,7 @@ Node version >= 20
       checks:
         name: Run Checks
         runs-on: ubuntu-latest
+        environment: release
         permissions:
           contents: write # to be able to publish a GitHub release
           issues: write # to be able to comment on released issues
@@ -381,7 +382,6 @@ Node version >= 20
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
             run: npx semantic-release
-
 
     ```
 
