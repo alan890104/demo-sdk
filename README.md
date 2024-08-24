@@ -350,6 +350,11 @@ Node version >= 20
       checks:
         name: Run Checks
         runs-on: ubuntu-latest
+        permissions:
+          contents: write # to be able to publish a GitHub release
+          issues: write # to be able to comment on released issues
+          pull-requests: write # to be able to comment on released pull requests
+          id-token: write # to enable use of OIDC for npm provenance
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         steps:
           - name: Checkout code
@@ -375,7 +380,10 @@ Node version >= 20
         name: Publish to npm
         runs-on: ubuntu-latest
         permissions:
-          contents: write
+          contents: write # to be able to publish a GitHub release
+          issues: write # to be able to comment on released issues
+          pull-requests: write # to be able to comment on released pull requests
+          id-token: write # to enable use of OIDC for npm provenance
         if: github.event_name == 'release' && github.event.action == 'published'
         steps:
           - name: Checkout code
@@ -399,7 +407,6 @@ Node version >= 20
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
             run: npx semantic-release
-
 
     ```
 
