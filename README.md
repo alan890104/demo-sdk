@@ -154,14 +154,13 @@ Node version >= 20
 
     ```json
     {
-      "private": true, // if it is a private package
       "main": "dist/v1-sdk.cjs.js",
       "module": "dist/v1-sdk.esm.js",
       "browser": "dist/v1-sdk.umd.js",
-      "types": "dist/index.d.ts",
+      "types": "dist/types/index.d.ts",
       "scripts": {
-        "build": "tsc --emitDeclarationOnly",
-        "dev": "rollup -c -w"
+        "build": "NODE_ENV=production rollup -c",
+        "dev": "NODE_ENV=development rollup -c -w"
       },
       "files": [
         "dist",
