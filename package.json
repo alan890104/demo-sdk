@@ -1,0 +1,39 @@
+{
+  "name": "sdk",
+  "version": "0.0.1",
+  "private": true,
+  "packageManager": "yarn@4.4.1",
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/babel__core": "^7",
+    "@types/babel__preset-env": "^7",
+    "rollup": "^4.21.0",
+    "tslib": "^2.7.0",
+    "typescript": "^5.5.4"
+  },
+  "main": "dist/v1-sdk.cjs.js",
+  "module": "dist/v1-sdk.esm.js",
+  "browser": "dist/v1-sdk.umd.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "NODE_ENV=production rollup -c",
+    "dev": "NODE_ENV=development rollup -c -w"
+  },
+  "files": [
+    "dist",
+    "types"
+  ],
+  "dependencies": {
+    "@ton/core": "^0.57.0",
+    "@ton/crypto": "^3.3.0",
+    "@ton/ton": "^15.0.0",
+    "axios": "^1.7.5",
+    "buffer": "^6.0.3"
+  }
+}

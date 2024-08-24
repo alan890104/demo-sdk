@@ -1,0 +1,67 @@
+# 排除源码目录
+src/
+
+# 排除 TypeScript 配置文件
+tsconfig.json
+tslint.json
+
+# 排除 Rollup 配置文件
+rollup.config.js
+
+# 排除测试文件
+test/
+tests/
+*.test.js
+*.spec.js
+*.test.ts
+*.spec.ts
+
+# 排除构建工具和 IDE 配置文件
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# 排除日志文件
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 排除本地环境变量文件
+.env
+.env.*
+
+# 排除本地生成的锁定文件
+yarn.lock
+package-lock.json
+
+# 排除文档
+*.md
+docs/
+README.md
+
+# 排除 Git 相关文件
+.git/
+.gitattributes
+.gitignore
+
+# 排除 npm 忽略文件本身
+.npmignore
+
+# 排除编译生成的 source map（如果你不想发布它们）
+*.map
+
+# 保留的文件
+!dist/
+!types/
+
+# tgz 文件
+*.tgz
+
+# babel 配置文件
+babel.config.json
+
+# semantic-release 配置文件
+.releaserc.json
