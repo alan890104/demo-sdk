@@ -322,14 +322,49 @@
     publish to github
     ```
 
+16. Get NPM token and add it to github release environment's secret. (you need to create a new environment)
 
-16. Setup cli for semantic-release.
+17. Setup cli for semantic-release.
 
     ```bash
     npx semantic-release-cli setup
     ```
 
+18. Add a github workflow file `.github/workflows/release.yml` with following content.
 
+    ```yaml
+    # .github/workflows/release.yml
+
+    name: Release
+
+    # push 到 main 分支時，會促發此 workflow
+    on:
+      push:
+        branches:
+          - main
+    jobs:
+      release:
+        name: Release
+        environment: release # 這裡要記得指定套用的環境，才能取得變數
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v4
+            with:
+              fetch-depth: 0
+          - name: Setup Node.js
+            uses: actions/setup-node@v4
+            with:
+              node-version: 18
+          - name: Install dependencies
+            run: yarn install
+          - name: Release
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+            run: npx semantic-release
+
+    ```
 
 ## Usage
 
