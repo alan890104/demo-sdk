@@ -343,8 +343,9 @@ Node version >= 20
       push:
         branches:
           - main
-      release:
-        types: [published]
+
+    permissions:
+      contents: read # for checkout
 
     jobs:
       checks:
@@ -355,7 +356,6 @@ Node version >= 20
           issues: write # to be able to comment on released issues
           pull-requests: write # to be able to comment on released pull requests
           id-token: write # to enable use of OIDC for npm provenance
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         steps:
           - name: Checkout code
             uses: actions/checkout@v4
@@ -376,37 +376,12 @@ Node version >= 20
           - name: Run Build
             run: yarn build
 
-      release:
-        name: Publish to npm
-        runs-on: ubuntu-latest
-        permissions:
-          contents: write # to be able to publish a GitHub release
-          issues: write # to be able to comment on released issues
-          pull-requests: write # to be able to comment on released pull requests
-          id-token: write # to enable use of OIDC for npm provenance
-        if: github.event_name == 'release' && github.event.action == 'published'
-        steps:
-          - name: Checkout code
-            uses: actions/checkout@v4
-            with:
-              fetch-depth: 0
-
-          - name: Setup Node.js
-            uses: actions/setup-node@v4
-            with:
-              node-version: 20
-
-          - name: Setup yarn version
-            run: corepack enable && yarn set version 4.4.1
-
-          - name: Install dependencies
-            run: yarn install --frozen-lockfile
-
           - name: Publish to npm
             env:
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
             run: npx semantic-release
+
 
     ```
 
