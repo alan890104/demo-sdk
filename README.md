@@ -357,7 +357,7 @@
             with:
               node-version: 18
           - name: Setup yarn version
-            run: corepack enable && yarn set version stable
+            run: corepack enable && yarn set version 4.4.1
           - name: Install dependencies
             run: yarn install --frozen-lockfile
           - name: Release
