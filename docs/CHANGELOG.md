@@ -1,3 +1,10 @@
+# [0.6.0](https://github.com/alan890104/demo-sdk/compare/v0.5.0...v0.6.0) (2024-08-24)
+
+
+### Features
+
+* a big feature ([a322ce7](https://github.com/alan890104/demo-sdk/commit/a322ce7b0bc2cf65dd3a16d63d2be86a3e535ab1))
+
 # [0.5.0](https://github.com/alan890104/demo-sdk/compare/v0.4.0...v0.5.0) (2024-08-24)
 
 
