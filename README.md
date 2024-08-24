@@ -1,5 +1,7 @@
 # sdk
 
+## Prerequisites
+Node version >= 20
 
 # Setup 
 
