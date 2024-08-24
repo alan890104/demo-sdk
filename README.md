@@ -303,7 +303,12 @@ Node version >= 20
             "changelogFile": "docs/CHANGELOG.md"
           }
         ],
-        "@semantic-release/npm",
+        [
+          "@semantic-release/npm",
+          {
+            "npmPublish": true
+          }
+        ],
         [
           "@semantic-release/git",
           {
