@@ -1,7 +1,6 @@
 {
   "name": "sdk",
   "version": "0.0.0-development",
-  "private": true,
   "packageManager": "yarn@4.4.1",
   "devDependencies": {
     "@babel/core": "^7.25.2",
