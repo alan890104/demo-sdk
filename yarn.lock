@@ -2361,6 +2361,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+"alan-sdk@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "alan-sdk@workspace:."
+  dependencies:
+    "@babel/core": "npm:^7.25.2"
+    "@babel/preset-env": "npm:^7.25.4"
+    "@rollup/plugin-babel": "npm:^6.0.4"
+    "@rollup/plugin-terser": "npm:^0.4.4"
+    "@rollup/plugin-typescript": "npm:^11.1.6"
+    "@semantic-release/changelog": "npm:^6.0.3"
+    "@semantic-release/git": "npm:^10.0.1"
+    "@ton/core": "npm:^0.57.0"
+    "@ton/crypto": "npm:^3.3.0"
+    "@ton/ton": "npm:^15.0.0"
+    "@types/babel__core": "npm:^7"
+    "@types/babel__preset-env": "npm:^7"
+    axios: "npm:^1.7.5"
+    buffer: "npm:^6.0.3"
+    rollup: "npm:^4.21.0"
+    semantic-release: "npm:^24.1.0"
+    tslib: "npm:^2.7.0"
+    typescript: "npm:^5.5.4"
+  languageName: unknown
+  linkType: soft
+
 "ansi-escapes@npm:^7.0.0":
   version: 7.0.0
   resolution: "ansi-escapes@npm:7.0.0"
@@ -5556,31 +5581,6 @@ __metadata:
   checksum: 10c0/7e3c8b2e88a1841c9671094bbaeebd94448111dd90a81a1f606f3f67708a6ec57763b3b47f06da09fc6054193e0e6709e77325415dc8422b04497a8070fa02d4
   languageName: node
   linkType: hard
-
-"sdk@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "sdk@workspace:."
-  dependencies:
-    "@babel/core": "npm:^7.25.2"
-    "@babel/preset-env": "npm:^7.25.4"
-    "@rollup/plugin-babel": "npm:^6.0.4"
-    "@rollup/plugin-terser": "npm:^0.4.4"
-    "@rollup/plugin-typescript": "npm:^11.1.6"
-    "@semantic-release/changelog": "npm:^6.0.3"
-    "@semantic-release/git": "npm:^10.0.1"
-    "@ton/core": "npm:^0.57.0"
-    "@ton/crypto": "npm:^3.3.0"
-    "@ton/ton": "npm:^15.0.0"
-    "@types/babel__core": "npm:^7"
-    "@types/babel__preset-env": "npm:^7"
-    axios: "npm:^1.7.5"
-    buffer: "npm:^6.0.3"
-    rollup: "npm:^4.21.0"
-    semantic-release: "npm:^24.1.0"
-    tslib: "npm:^2.7.0"
-    typescript: "npm:^5.5.4"
-  languageName: unknown
-  linkType: soft
 
 "semantic-release@npm:^24.1.0":
   version: 24.1.0
