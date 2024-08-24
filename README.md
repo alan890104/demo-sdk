@@ -71,7 +71,7 @@ Node version >= 20
     .env.*
 
     *.tgz
-
+    !rollup.config.js
     ```
 
 6. Install dependencies for sdk.
@@ -335,40 +335,69 @@ Node version >= 20
 18. Add a github workflow file `.github/workflows/release.yml` with following content.
 
     ```yaml
-    # .github/workflows/release.yml
+    name: CI and Release
 
-    name: Release
-
-    # push 到 main 分支時，會促發此 workflow
     on:
       push:
         branches:
           - main
-    jobs:
       release:
-        name: Release
-        environment: release # 這裡要記得指定套用的環境，才能取得變數
+        types: [published]
+
+    jobs:
+      checks:
+        name: Run Checks
         runs-on: ubuntu-latest
-        permissions:
-          contents: write
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         steps:
-          - name: Checkout
+          - name: Checkout code
             uses: actions/checkout@v4
             with:
               fetch-depth: 0
+
           - name: Setup Node.js
             uses: actions/setup-node@v4
             with:
               node-version: 20
+
           - name: Setup yarn version
             run: corepack enable && yarn set version 4.4.1
+
           - name: Install dependencies
             run: yarn install --frozen-lockfile
-          - name: Release
+
+          - name: Run Build
+            run: yarn build
+
+      release:
+        name: Publish to npm
+        runs-on: ubuntu-latest
+        permissions:
+          contents: write
+        if: github.event_name == 'release' && github.event.action == 'published'
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v4
+            with:
+              fetch-depth: 0
+
+          - name: Setup Node.js
+            uses: actions/setup-node@v4
+            with:
+              node-version: 20
+
+          - name: Setup yarn version
+            run: corepack enable && yarn set version 4.4.1
+
+          - name: Install dependencies
+            run: yarn install --frozen-lockfile
+
+          - name: Publish to npm
             env:
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
             run: npx semantic-release
+
 
     ```
 
