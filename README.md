@@ -349,6 +349,8 @@ Node version >= 20
         name: Release
         environment: release # 這裡要記得指定套用的環境，才能取得變數
         runs-on: ubuntu-latest
+        permissions:
+          contents: write
         steps:
           - name: Checkout
             uses: actions/checkout@v4
@@ -358,6 +360,7 @@ Node version >= 20
             uses: actions/setup-node@v4
             with:
               node-version: 20
+              cache: 'yarn'
           - name: Setup yarn version
             run: corepack enable && yarn set version 4.4.1
           - name: Install dependencies
