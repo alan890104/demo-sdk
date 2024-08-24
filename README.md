@@ -360,7 +360,6 @@ Node version >= 20
             uses: actions/setup-node@v4
             with:
               node-version: 20
-              cache: 'yarn'
           - name: Setup yarn version
             run: corepack enable && yarn set version 4.4.1
           - name: Install dependencies
