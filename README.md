@@ -293,10 +293,13 @@ Node version >= 20
 
     ```json
     {
-      "branches": ["main"],
+      "branches": [
+        {
+          "name": "v[0-9]+.[0-9]+.[0-9]+",
+          "prerelease": false
+        }
+      ],
       "tagFormat": "${version}",
-      "name": "v[0-9]+.[0-9]+.[0-9]+",
-      "prerelease": false,
       "plugins": [
         "@semantic-release/commit-analyzer",
         "@semantic-release/release-notes-generator",
