@@ -1,4 +1,5 @@
 import { Address, beginCell, Cell } from "@ton/core";
+import { Buffer } from "buffer";
 /**
  * A simple SDK class for handling basic operations.
  */
@@ -27,6 +28,9 @@ export class MySDK {
         return `Hello, ${this.name}!`;
     }
 
+    sendBoc(): Buffer {
+        return beginCell().endCell().toBoc()
+    }
     /**
      * Calculates the sum of two numbers.
      * @param a - The first number.
