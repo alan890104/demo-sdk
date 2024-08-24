@@ -342,7 +342,7 @@ Node version >= 20
     on:
       push:
         branches:
-          - release
+          - main
 
     permissions:
       contents: read # for checkout
