@@ -355,7 +355,7 @@
           - name: Setup Node.js
             uses: actions/setup-node@v4
             with:
-              node-version: 18
+              node-version: 20
           - name: Setup yarn version
             run: corepack enable && yarn set version 4.4.1
           - name: Install dependencies
