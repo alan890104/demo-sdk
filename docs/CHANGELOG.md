@@ -1,3 +1,10 @@
+# [0.7.0](https://github.com/alan890104/demo-sdk/compare/v0.6.0...v0.7.0) (2024-08-24)
+
+
+### Features
+
+* Add Buffer import for sending Boc in MySDK class ([b9e5b5c](https://github.com/alan890104/demo-sdk/commit/b9e5b5c4c3c35e2af0a950f97d4ed89cb63f8642))
+
 # [0.6.0](https://github.com/alan890104/demo-sdk/compare/v0.5.0...v0.6.0) (2024-08-24)
 
 
