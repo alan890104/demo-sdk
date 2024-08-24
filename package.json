@@ -1,5 +1,5 @@
 {
-  "name": "sdk",
+  "name": "alan-sdk",
   "version": "0.0.0-development",
   "packageManager": "yarn@4.4.1",
   "devDependencies": {
