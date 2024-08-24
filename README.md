@@ -356,6 +356,8 @@
             uses: actions/setup-node@v4
             with:
               node-version: 18
+          - name: Setup yarn version
+            run: yarn set version stable
           - name: Install dependencies
             run: yarn install
           - name: Release
