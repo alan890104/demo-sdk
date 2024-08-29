@@ -35,7 +35,8 @@
     "@ton/crypto": "^3.3.0",
     "@ton/ton": "^15.0.0",
     "axios": "^1.7.5",
-    "buffer": "^6.0.3"
+    "buffer": "^6.0.3",
+    "decimal.js": "^10.4.3"
   },
   "repository": {
     "type": "git",

@@ -2379,6 +2379,7 @@ __metadata:
     "@types/babel__preset-env": "npm:^7"
     axios: "npm:^1.7.5"
     buffer: "npm:^6.0.3"
+    decimal.js: "npm:^10.4.3"
     rollup: "npm:^4.21.0"
     semantic-release: "npm:^24.1.0"
     tslib: "npm:^2.7.0"
@@ -3011,6 +3012,13 @@ __metadata:
     supports-color:
       optional: true
   checksum: 10c0/3293416bff072389c101697d4611c402a6bacd1900ac20c0492f61a9cdd6b3b29750fc7f5e299f8058469ef60ff8fb79b86395a30374fbd2490113c1c7112285
+  languageName: node
+  linkType: hard
+
+"decimal.js@npm:^10.4.3":
+  version: 10.4.3
+  resolution: "decimal.js@npm:10.4.3"
+  checksum: 10c0/6d60206689ff0911f0ce968d40f163304a6c1bc739927758e6efc7921cfa630130388966f16bf6ef6b838cb33679fbe8e7a78a2f3c478afce841fd55ac8fb8ee
   languageName: node
   linkType: hard
 
